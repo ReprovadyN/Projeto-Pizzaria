@@ -1,7 +1,7 @@
 .auth-layout {
     background-image: 
-        linear-gradient(rgba(13, 26, 38, .95), rgba(13, 26, 38, .95)),
-        url('/images/background-login.png');
+        linear-gradient(rgba(31, 25, 20), rgba(255, 0, 0, .15)),
+        url('/images/Background Quente.png');
     background-size: cover;
     background-position: center;
 

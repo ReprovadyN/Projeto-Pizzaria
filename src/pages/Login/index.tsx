@@ -7,12 +7,12 @@ const Login = () => {
   return (
     <div className="login-form">
       <Input 
-        placeholder="email@email.com" 
-        label="E-mail"
+        placeholder="Email" 
+        label=""
       />
       <Input 
         placeholder="*********"
-        label="Senha"
+        label=""
       />
 
       <div className="actions">
@@ -21,14 +21,20 @@ const Login = () => {
         </a>
 
         <Button>
-          Enviar
+          <p>Acessar</p>
         </Button>
       </div>
 
       <Button
         variant={"secondary"}
       >
-        Registre-se
+        <p>Não possui conta? Registre-se.</p>
+      </Button>
+      <p>Ou</p>
+
+      <Button variant={"secondary"}>
+        <img src='/images/devicon_google.png'></img><p> </p>
+        <p>Entrar com o Google</p>
       </Button>
     </div>
   );

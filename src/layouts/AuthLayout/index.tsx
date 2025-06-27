@@ -5,7 +5,9 @@ import "./index.css";
 const AuthLayout = () => {
   return (
     <div className="auth-layout">
-      <img src={"/images/logo-white.png"} alt="Logo YouthFlix" />
+      <span>Seja bem vindo a</span>
+      <img src={"/images/LogoPizzaria.png"} alt="Logo Pizzaria" />
+      <span>Faça seu pedido online!</span>
       <Outlet />
     </div>
   );
