@@ -1,0 +1,25 @@
+.register-form {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    width: 350px;
+    max-width: 80vw;
+}
+
+p {
+    text-align: center;
+    font-weight: bolder;
+}
+
+Button {
+    margin-top: 25px;
+
+}
+
+span {
+    margin-top: 10px;
+}
+
+p {
+    margin-left: 5px;
+}
