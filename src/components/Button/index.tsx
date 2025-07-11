@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { ButtonHTMLAttributes, PropsWithChildren } from "react";
 import './index.css'
 import classNames from "classnames";
 
@@ -6,13 +6,14 @@ type ButtonProps = {
     variant?: 'primary' | 'secondary' | 'link';
     size?: 'sm' | 'md' | 'lg';
     disabled?: boolean;
-}
+} &ButtonHTMLAttributes <HTMLButtonElement>
 
 const Button = ({
     variant = 'primary',
     size = 'md',
     disabled,
-    children
+    children,
+    ... props
 }: PropsWithChildren<ButtonProps>) => {
     const classes = classNames(
         'btn',
@@ -29,6 +30,7 @@ const Button = ({
         <button
             className={classes}
             disabled={disabled}
+            {... props}
         >
             {children}
         </button>

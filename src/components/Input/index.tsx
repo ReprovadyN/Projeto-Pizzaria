@@ -1,3 +1,4 @@
+import type { InputHTMLAttributes } from 'react';
 import './index.css'
 
 type InputProps = {
@@ -7,7 +8,7 @@ type InputProps = {
     onChange?: (value: string) => void;
     value?: string;
     label?: string;
-};
+} &InputHTMLAttributes<HTMLInputElement>
 
 const Input = ({
     placeholder,
@@ -15,7 +16,8 @@ const Input = ({
     readOnly,
     onChange,
     value,
-    label
+    label,
+    ... props
 }: InputProps) => {
   return (
     <label className='yf-input'>
@@ -26,6 +28,7 @@ const Input = ({
             readOnly={readOnly}
             onChange={(event) => onChange?.(event.target.value)}
             value={value}
+            {... props}
         />
     </label>
   )
