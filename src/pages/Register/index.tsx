@@ -25,7 +25,7 @@ const Register = () => {
       document: values.get('document'),
     }
 
-    await fetch('http://localhost:8000/auth/register', {
+    const request = await fetch('http://localhost:8000/auth/register', {
       method: 'post',
       body: JSON.stringify(body),
       headers: {
@@ -33,6 +33,10 @@ const Register = () => {
       }
 
     });
+
+    if (!request.ok){
+      return;
+    }
 
     navigate('/auth/login')
 

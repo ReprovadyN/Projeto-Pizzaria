@@ -7,9 +7,11 @@ import AuthLayout from "./layouts/AuthLayout";
 import AppLayout from "./layouts/AppLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import AuthProvider from "./contexts/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="auth" element={<AuthLayout />}>
@@ -21,5 +23,6 @@ createRoot(document.getElementById("root")!).render(
         <Route index element={<AppLayout />} />
       </Routes>
     </BrowserRouter>
+</AuthProvider>
   </StrictMode>
 );

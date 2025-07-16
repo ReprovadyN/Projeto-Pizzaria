@@ -1,48 +1,30 @@
-import type { FormEventHandler } from "react";
+import { useContext, type FormEventHandler } from "react";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import { AuthContext } from "../../contexts/AuthContext";
 
 import './index.css'
 import { useNavigate } from "react-router";
 
 const Login = () => {
   const navigate = useNavigate()
+
+  const {
+    signIn
+  } = useContext(AuthContext)
   
     const onSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
       event.preventDefault()
       const values = new FormData(event.target as HTMLFormElement)
   
-  
-      //Validações vão aqui
-  
       const body = {
-        email: values.get('email'),
-        password: values.get('password'),
+        email: values.get('email') as string,
+        password: values.get('password') as string,
       }
-  
-      const request = await fetch('http://localhost:8000/auth/login', {
-        method: 'post',
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json"
-        }
-  
-      });
-      const { token } = await request.json();
 
-      localStorage.setItem('token', token);
+      await signIn(body)
 
-      const profileRequest = await fetch('http://localhost:8000/auth/profile', {
-        headers: {
-          "Authorization": "Bearer " + token
-        }
-      })
-      const jsonProfileResponse = await profileRequest.json()
-
-      console.log(jsonProfileResponse)
-  
-      //navigate('/')
-  
+      navigate('/Profile')
     }
 
   return (
