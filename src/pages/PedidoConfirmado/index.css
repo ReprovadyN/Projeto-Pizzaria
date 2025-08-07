@@ -1,0 +1,81 @@
+/* Pedido Confirmado Styles */
+.pedido-confirmado-container {
+  min-height: 100vh;
+  background: #000;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pedido-confirmado-header {
+  width: 100vw;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 0 0 0 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.pedido-confirmado-header-bg {
+  position: relative;
+  width: 100vw;
+  height: 110px;
+  background: #eaeaea;
+  z-index: 1;
+}
+.logo {
+  height: 48px;
+  margin: 0 auto;
+  display: block;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: #222;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.pedido-confirmado-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
+}
+.pedido-confirmado-check {
+  margin-bottom: 24px;
+}
+.pedido-confirmado-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.pedido-confirmado-home-btn {
+  width: 90%;
+  margin: 0 auto 32px auto;
+  background: #fff;
+  color: #222;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pedido-confirmado-home-btn:hover {
+  background: #eaeaea;
+}
